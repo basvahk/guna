@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tic-tac-toe-deployment
+  labels:
+    app: tic-tac-toe
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tic-tac-toe
+  template:
+    metadata:
+      labels:
+        app: tic-tac-toe
+    spec:
+      containers:
+        - name: tic-tac-toe-container
+          image: 911777263281.dkr.ecr.ap-south-1.amazonaws.com/tic-tac-toe:v1
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
