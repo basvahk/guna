@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tic-tac-toe
+  name: hello-world-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tic-tac-toe
+      app: hello-world
   template:
     metadata:
       labels:
-        app: tic-tac-toe
+        app: hello-world
     spec:
       containers:
-      - name: tic-tac-toe
-        image: mbasav/guna-app:latest
+      - name: hello-world
+        image: <dockerhub-username>/hello-world-app:latest
         ports:
         - containerPort: 80
