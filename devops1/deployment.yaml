@@ -1,19 +1,19 @@
-apiVersion: apps/v2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tic-tac-toe
+  name: guna-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: tic-tac-toe
+      app: guna
   template:
     metadata:
       labels:
-        app: tic-tac-toe
+        app: guna
     spec:
       containers:
-      - name: tic-tac-toe
-        image: 911777263281.dkr.ecr.ap-south-1.amazonaws.com/tic-tac-toe:v2
+      - name: guna-container
+        image: mbasav/guna-app:latest
         ports:
         - containerPort: 80
